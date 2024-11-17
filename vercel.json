@@ -1,5 +1,12 @@
 {
-   "rewrites":  [
-       {"source": "/(.*)", "destination": "/"}
-    ]
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "builds": [
+    { "src": "client/package.json", "use": "@vercel/static-build" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/client/index.html" }
+  ],
+  "outputDirectory": "client/build"
 }
